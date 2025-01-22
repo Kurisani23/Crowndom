@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowndom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            font-style: oblique;
+            font-family: roboto, arial;
+            color: white;
+            border: none;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            background-color: rgb(241, 209, 101);
+            padding: 0px;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .navbar a {
+            color: #000000;
+            text-decoration: none;
+            padding: 16px;
+            padding-left: 8px;
+            padding-right: 8px;
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            font-family: roboto, arial;
+        }
+
+        .navbar a:hover {
+            color: #000;
+            background-color: rgb(224, 176, 19);
+        }
+
+        .navbar li {
+            float: left;
+        }
+
+        .navbar {
+            top: 58px;
+            left: 0;
+            right: 0;
+            margin-bottom: 3px;
+            position: fixed;
+            z-index: 100;
+            width: 100%;
+        }
+
+        .material-symbols-outlined {
+            float: right;
+            padding-left: 10px;
+            padding-right: 16px;
+            padding-top: 12px;
+          
+        }
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 108px;
+            height: 300px;
+            width:100%;
+            margin-bottom: 20px;
+            background-color: rgb(231, 222, 87);
+            position: relative;
+           
+        }
+        .image{
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .background1{
+            background-color: beige;
+            background-image: url('crowndom.jpg');
+        }
+        .background2{
+            
+            background-color: aquamarine;
+
+            background-image: url('crowndom.jpg');
+        }
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+        .overlay h1 {
+        font-size: 20px;
+        font-family: roboto, arial;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: #ffffff;
+         }
+        .overlay p {
+            font-size: 12px;
+             font-family: roboto, arial;
+                margin-bottom: 30px;
+             color: #ffffff;
+        }
+        .button-group {
+                 display: flex;
+                 gap: 20px;
+                 justify-content: center;
+        }
+        .button {
+            padding: 10px 20px;
+           background-color: rgba(255, 255, 255, 0.9);
+             color: #000;
+             text-decoration: none;
+               border: none;
+            font-size: 16px;
+             cursor: pointer;
+            font-family: roboto, arial;
+             border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .button:hover {
+                padding-left: 24px;
+                padding-right: 24px;
+                background-color: rgb(119, 114, 114);
+              }
+              .popular-category {
+        margin-top: 80px;
+        padding: 20px;
+        text-align: center;
+       }
+       .popular-category p {
+        font-family: roboto, arial, sans-serif;
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        }
+        .popular-display {
+               display: flex;
+               gap: 20px;
+               justify-content: center;
+               align-items: flex-start; 
+        }
+
+        .category-item {
+                 display: flex;
+                 flex-direction: column;
+                 align-items: center; 
+                 text-align: center;
+                 max-width: 150px; 
+        }
+
+        .category-item img {
+               height: 150px;
+               width: auto;
+               border-radius: 8px;
+               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+               transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+       .category-item img:hover {
+              transform: scale(1.1);
+              box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+       .category-item p {
+              margin-top: 8px;
+              font-family: roboto, arial, sans-serif;
+              font-size: 16px;
+              font-weight: bold;
+              color: #000;
+            text-transform: capitalize;
+        }
+       .mid-pic{
+             object-fit: cover;
+              width:100%;
+             height:200px;
+        }
+        .new-arrivals{
+            font-family: roboto, arial, sans-serif;
+            margin-top: 70px;
+            width: 100%;
+            margin-bottom: 20px;
+          
+            overflow: hidden;
+        }
+        .new-arrivals h4{
+            padding-bottom: 2px;
+            padding-left: 12px;
+            display: inline-block;
+        }
+        .new-arrivals a{
+            float:right;
+            margin-top: 6px;
+            padding-right: 12px;
+        }
+
+        .new{
+        display: flex;
+        justify-content: space-around;
+        margin: 0px 0;
+        }
+        .arrival {
+             width: 22%;
+           
+        }
+        .arrival img {
+            max-width: 100%;
+            height: auto;
+            border-radius: none;
+            background-color: lightpink;
+        }
+        .arrival h3 {
+            margin: 0px;
+            font-size: 14px;
+        }
+        .footer {
+            clear:both;
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            margin-bottom: 16px;
+            color: #333;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: #000;
+        }
+
+        .footer-newsletter {
+            text-align: center;
+        }
+
+        .footer-newsletter input {
+            padding: 10px;
+            margin: 8px 0;
+            width: calc(50% - 16px);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .footer-newsletter button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer-newsletter button:hover {
+            background-color: #555;
+        }
+
+        
+    </style>
+</head>
+<body >
+    <header>
+        <h4>WELCOME TO CROWNDOM</h4>
+    </header>
+   
+    <nav class="navbar">
+        <ul>
+            <li><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /></li>
+            <li><a href="Larry.html">Home</a></li>
+            <li><a href="larry2.html">Products</a></li>
+            <li><a href="Larry7.html">About</a></li>
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="material-symbols-outlined">shopping_cart</span>
+            <span class="material-symbols-outlined">local_mall</span>
+        </ul>
+    </nav>
+  
+    <div class="container">
+        <div class="image background1" alt="pic1"></div>
+        <div class="image background2" alt="pic2"></div>
+        <div class="overlay">
+            <h1>TAKE A SNEAK PEAK INTO OUR STORE</h1>
+            <p>Curated collections, timeless accessories.</p>
+            <div class="button-group">
+                <button class="button">Products</button>
+                <button class="button">Best Sellers</button>
+        </div>
+        </div>
+        </div>
+        <div class="popular-category">
+            <p>Popular Categories</p>
+            <div class="popular-display">
+                <div class="category-item">
+                    <img src="crowndom.jpg" alt="Product1">
+                    <p>hair1</p>
+                </div>
+                <div class="category-item">
+                    <img src="crowndom.jpg" alt="Product2">
+                    <p>hair2</p>
+                </div>
+                <div class="category-item">
+                    <img src="crowndom.jpg" alt="Product3">
+                    <p>hair3</p>
+                </div>
+                <div class="category-item">
+                    <img src="crowndom.jpg" alt="Product4">
+                    <p>hair4</p>
+                </div>
+            </div>
+        </div>
+        <div style="background-color: beige;
+                    display:flex;
+                    flex-direction: row;
+                    height: 200px;">
+            <div style="flex: 1;
+                 background-color: lightgray;
+                 text-align: center;
+                 font-family: roboto,Arial, Helvetica, sans-serif;
+                 overflow: hidden;"><h3 style="margin: 8px;" >SEND A GIFT TO SOMEONE YOU LOVE</h3>
+                   <p style="margin: 8px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit aut reiciendis natus eveniet nisi porro dolorem illum quidem voluptatibus sapiente beatae dolor fugiat velit fuga, laudantium odit nam facere enim.</p></div>
+                 <div style="flex: 1;
+                 background-color: lightpink;"><img class="mid-pic" src=crowndom.jpg alt="aesthetic"></div>
+        </div>
+        </div> 
+        <div class="new-arrivals">
+            <h4>NEW ARRIVALS</h4>
+            <a href="">see all products</a>
+            <section class="new">
+                <div class="arrival">
+                    <img src="crowndom.jpg" alt="hair1">
+                    <h3>hair1</h3>
+                </div>
+                <div class="arrival">
+                    <img src="crowndom.jpg" alt="hair2">
+                    <h3>hair2</h3>
+                </div>
+                <div class="arrival">
+                    <img src="crowndom.jpg" alt="hair1">
+                    <h3>hair3</h3>
+                </div>
+                <div class="arrival">
+                    <img src="crowndom.jpg" alt="hair3">
+                    <h3>hair4</h3>
+                    <div style="display: block;">
+                        <br>
+                    </div>
+                </div>
+            </div>
+                
+                <footer class="footer">
+                    <div class="footer-column">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="#">hair</a></li>
+                            <li><a href="#">Frontals</a></li>
+                            <li><a href="#">Accesories</a></li>
+                   
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Info</h4>
+                        <ul>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Contact us</a></li>
+                            
+                            <li><a href="#">FAQ's</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Social</h4>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                           
+                            <li><a href="#">WhatsApp</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Join Our Community</h4>
+                        <p>Sign up for weekly updates.</p>
+                        <input type="text" placeholder="Your name">
+                        <input type="email" placeholder="Your email">
+                        <button>Crowndom</button>
+                    </div>
+                </footer>
+    
+</body>
+</html>
