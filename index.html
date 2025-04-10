@@ -13,6 +13,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            max-width: 100%; /* Prevent horizontal overflow */
+        }
+        body {
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
         header {
             background-color: rgb(0, 0, 0);
@@ -36,6 +40,7 @@
             padding: 0px;
             margin: 0;
             overflow: hidden;
+            width: 100%; /* Ensure navbar doesn't overflow */
         }
 
         .navbar a {
@@ -74,34 +79,35 @@
             padding-left: 10px;
             padding-right: 16px;
             padding-top: 12px;
-          
         }
+
         .container{
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin-top: 108px;
             height: 300px;
-            width:100%;
+            width: 100%;
             margin-bottom: 20px;
             background-color: rgb(231, 222, 87);
             position: relative;
-           
         }
+
         .image{
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
+
         .background1{
             background-color: beige;
             background-image: url('crowndom.jpg');
         }
-        .background2{
-            
-            background-color: aquamarine;
 
+        .background2{
+            background-color: aquamarine;
             background-image: url('crowndom.jpg');
         }
+
         .overlay {
             position: absolute;
             top: 50%;
@@ -109,110 +115,125 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: white;
+            width: 100%; /* Ensure overlay fits within container */
         }
+
         .overlay h1 {
-        font-size: 20px;
-        font-family: roboto, arial;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        color: #ffffff;
-         }
+            font-size: 20px;
+            font-family: roboto, arial;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
         .overlay p {
             font-size: 12px;
-             font-family: roboto, arial;
-                margin-bottom: 30px;
-             color: #ffffff;
+            font-family: roboto, arial;
+            margin-bottom: 30px;
+            color: #ffffff;
         }
+
         .button-group {
-                 display: flex;
-                 gap: 20px;
-                 justify-content: center;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow buttons to wrap if needed */
         }
+
         .button {
             padding: 10px 20px;
-           background-color: rgba(255, 255, 255, 0.9);
-             color: #000;
-             text-decoration: none;
-               border: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #000;
+            text-decoration: none;
+            border: none;
             font-size: 16px;
-             cursor: pointer;
+            cursor: pointer;
             font-family: roboto, arial;
-             border-radius: 5px;
+            border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
-            .button:hover {
-                padding-left: 24px;
-                padding-right: 24px;
-                background-color: rgb(119, 114, 114);
-              }
-              .popular-category {
-        margin-top: 80px;
-        padding: 20px;
-        text-align: center;
-       }
-       .popular-category p {
-        font-family: roboto, arial, sans-serif;
-        font-size: 20px;
-        margin-bottom: 20px;
-        font-weight: bold;
-        text-transform: uppercase;
+        .button:hover {
+            padding-left: 24px;
+            padding-right: 24px;
+            background-color: rgb(119, 114, 114);
         }
+
+        .popular-category {
+            margin-top: 80px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .popular-category p {
+            font-family: roboto, arial, sans-serif;
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         .popular-display {
-               display: flex;
-               gap: 20px;
-               justify-content: center;
-               align-items: flex-start; 
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
 
         .category-item {
-                 display: flex;
-                 flex-direction: column;
-                 align-items: center; 
-                 text-align: center;
-                 max-width: 150px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 150px;
         }
 
         .category-item img {
-               height: 150px;
-               width: auto;
-               border-radius: 8px;
-               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-               transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 150px;
+            width: auto;
+            max-width: 100%; /* Ensure images don't overflow */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-       .category-item img:hover {
-              transform: scale(1.1);
-              box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        .category-item img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
         }
 
-       .category-item p {
-              margin-top: 8px;
-              font-family: roboto, arial, sans-serif;
-              font-size: 16px;
-              font-weight: bold;
-              color: #000;
+        .category-item p {
+            margin-top: 8px;
+            font-family: roboto, arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            color: #000;
             text-transform: capitalize;
         }
-       .mid-pic{
-             object-fit: cover;
-              width:100%;
-             height:200px;
+
+        .mid-pic{
+            object-fit: cover;
+            width: 100%;
+            height: 200px;
         }
+
         .new-arrivals{
             font-family: roboto, arial, sans-serif;
             margin-top: 70px;
             width: 100%;
             margin-bottom: 20px;
-          
-            overflow: hidden;
+            padding: 0 15px; /* Add padding to prevent edge sticking */
         }
+
         .new-arrivals h4{
             padding-bottom: 2px;
             padding-left: 12px;
             display: inline-block;
         }
+
         .new-arrivals a{
             float:right;
             margin-top: 6px;
@@ -220,24 +241,30 @@
         }
 
         .new{
-        display: flex;
-        justify-content: space-around;
-        margin: 0px 0;
+            display: flex;
+            justify-content: space-around;
+            margin: 0px 0;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
         }
+
         .arrival {
-             width: 22%;
-           
+            width: 22%;
+            min-width: 150px; /* Set minimum width for arrivals */
+            margin-bottom: 20px; /* Add space between wrapped items */
         }
+
         .arrival img {
             max-width: 100%;
             height: auto;
             border-radius: none;
             background-color: lightpink;
         }
+
         .arrival h3 {
             margin: 0px;
             font-size: 14px;
         }
+
         .footer {
             clear:both;
             background-color: #f4f4f4;
@@ -280,12 +307,14 @@
 
         .footer-newsletter {
             text-align: center;
+            width: 100%;
+            max-width: 300px; /* Limit newsletter width */
         }
 
         .footer-newsletter input {
             padding: 10px;
             margin: 8px 0;
-            width: calc(50% - 16px);
+            width: 100%; /* Make inputs full width of container */
             border: 1px solid #ddd;
             border-radius: 4px;
         }
@@ -296,16 +325,38 @@
             color: white;
             border: none;
             cursor: pointer;
+            width: 100%; /* Make button full width */
         }
 
         .footer-newsletter button:hover {
             background-color: #555;
         }
 
-        
+        /* Added for the gift section */
+        .gift-section {
+            background-color: beige;
+            display: flex;
+            flex-direction: row;
+            height: 200px;
+            width: 100%;
+        }
+
+        .gift-text {
+            flex: 1;
+            background-color: lightgray;
+            text-align: center;
+            font-family: roboto,Arial, Helvetica, sans-serif;
+            overflow: hidden;
+            padding: 15px;
+        }
+
+        .gift-image {
+            flex: 1;
+            background-color: lightpink;
+        }
     </style>
 </head>
-<body >
+<body>
     <header>
         <h4>WELCOME TO CROWNDOM</h4>
     </header>
@@ -331,105 +382,97 @@
             <div class="button-group">
                 <button class="button">Products</button>
                 <button class="button">Best Sellers</button>
-        </div>
-        </div>
-        </div>
-        <div class="popular-category">
-            <p>Popular Categories</p>
-            <div class="popular-display">
-                <div class="category-item">
-                    <img src="crowndom.jpg" alt="Product1">
-                    <p>hair1</p>
-                </div>
-                <div class="category-item">
-                    <img src="crowndom.jpg" alt="Product2">
-                    <p>hair2</p>
-                </div>
-                <div class="category-item">
-                    <img src="crowndom.jpg" alt="Product3">
-                    <p>hair3</p>
-                </div>
-                <div class="category-item">
-                    <img src="crowndom.jpg" alt="Product4">
-                    <p>hair4</p>
-                </div>
             </div>
         </div>
-        <div style="background-color: beige;
-                    display:flex;
-                    flex-direction: row;
-                    height: 200px;">
-            <div style="flex: 1;
-                 background-color: lightgray;
-                 text-align: center;
-                 font-family: roboto,Arial, Helvetica, sans-serif;
-                 overflow: hidden;"><h3 style="margin: 8px;" >SEND A GIFT TO SOMEONE YOU LOVE</h3>
-                   <p style="margin: 8px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit aut reiciendis natus eveniet nisi porro dolorem illum quidem voluptatibus sapiente beatae dolor fugiat velit fuga, laudantium odit nam facere enim.</p></div>
-                 <div style="flex: 1;
-                 background-color: lightpink;"><img class="mid-pic" src=crowndom.jpg alt="aesthetic"></div>
-        </div>
-        </div> 
-        <div class="new-arrivals">
-            <h4>NEW ARRIVALS</h4>
-            <a href="">see all products</a>
-            <section class="new">
-                <div class="arrival">
-                    <img src="crowndom.jpg" alt="hair1">
-                    <h3>hair1</h3>
-                </div>
-                <div class="arrival">
-                    <img src="crowndom.jpg" alt="hair2">
-                    <h3>hair2</h3>
-                </div>
-                <div class="arrival">
-                    <img src="crowndom.jpg" alt="hair1">
-                    <h3>hair3</h3>
-                </div>
-                <div class="arrival">
-                    <img src="crowndom.jpg" alt="hair3">
-                    <h3>hair4</h3>
-                    <div style="display: block;">
-                        <br>
-                    </div>
-                </div>
+    </div>
+
+    <div class="popular-category">
+        <p>Popular Categories</p>
+        <div class="popular-display">
+            <div class="category-item">
+                <img src="crowndom.jpg" alt="Product1">
+                <p>hair1</p>
             </div>
-                
-                <footer class="footer">
-                    <div class="footer-column">
-                        <h4>Shop</h4>
-                        <ul>
-                            <li><a href="#">hair</a></li>
-                            <li><a href="#">Frontals</a></li>
-                            <li><a href="#">Accesories</a></li>
-                   
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Info</h4>
-                        <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">Contact us</a></li>
-                            
-                            <li><a href="#">FAQ's</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Social</h4>
-                        <ul>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Instagram</a></li>
-                           
-                            <li><a href="#">WhatsApp</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-newsletter">
-                        <h4>Join Our Community</h4>
-                        <p>Sign up for weekly updates.</p>
-                        <input type="text" placeholder="Your name">
-                        <input type="email" placeholder="Your email">
-                        <button>Crowndom</button>
-                    </div>
-                </footer>
-    
+            <div class="category-item">
+                <img src="crowndom.jpg" alt="Product2">
+                <p>hair2</p>
+            </div>
+            <div class="category-item">
+                <img src="crowndom.jpg" alt="Product3">
+                <p>hair3</p>
+            </div>
+            <div class="category-item">
+                <img src="crowndom.jpg" alt="Product4">
+                <p>hair4</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="gift-section">
+        <div class="gift-text">
+            <h3>SEND A GIFT TO SOMEONE YOU LOVE</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit aut reiciendis natus eveniet nisi porro dolorem illum quidem voluptatibus sapiente beatae dolor fugiat velit fuga, laudantium odit nam facere enim.</p>
+        </div>
+        <div class="gift-image">
+            <img class="mid-pic" src="crowndom.jpg" alt="aesthetic">
+        </div>
+    </div>
+
+    <div class="new-arrivals">
+        <h4>NEW ARRIVALS</h4>
+        <a href="">see all products</a>
+        <section class="new">
+            <div class="arrival">
+                <img src="crowndom.jpg" alt="hair1">
+                <h3>hair1</h3>
+            </div>
+            <div class="arrival">
+                <img src="crowndom.jpg" alt="hair2">
+                <h3>hair2</h3>
+            </div>
+            <div class="arrival">
+                <img src="crowndom.jpg" alt="hair1">
+                <h3>hair3</h3>
+            </div>
+            <div class="arrival">
+                <img src="crowndom.jpg" alt="hair3">
+                <h3>hair4</h3>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-column">
+            <h4>Shop</h4>
+            <ul>
+                <li><a href="#">hair</a></li>
+                <li><a href="#">Frontals</a></li>
+                <li><a href="#">Accesories</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Info</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQ's</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Social</h4>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">WhatsApp</a></li>
+            </ul>
+        </div>
+        <div class="footer-newsletter">
+            <h4>Join Our Community</h4>
+            <p>Sign up for weekly updates.</p>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <button>Crowndom</button>
+        </div>
+    </footer>
 </body>
 </html>
